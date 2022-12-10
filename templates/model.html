@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'styles/style.css' %}">
+</head>
+<body>
+    <div class="wrapper">
+    <header class="header">
+        <div class="content">
+            <div class="header_container">
+
+
+            <div class="header-body__burger logo">
+                <span>MDM</span>-MOTORS
+            </div>
+            <div class="header-body">
+            <div class="header__menu">
+                <ul class="header__menu-list">
+                    <li>О компании</li>
+                    <li>Как купить</li>
+                    <li>Скачать прайс</li>
+                </ul>
+            </div>
+
+            <div class="header-body__main">
+            <div class="header-body__logo logo">
+                <span>MDM</span>-MOTORS
+            </div>
+            <div class="header-body__basket">
+                <img src="{% static 'img/header/basket.svg' %}" alt="">
+                <p>Войти</p>
+            </div>
+            </div>
+
+
+            <div class="header-body__search">
+                <input type="search" placeholder="Поиск">
+                <button>
+                    <img src="{% static 'img/header/search.svg' %}" alt="">
+                </button>
+            </div>
+
+
+
+        </div>
+            <div class="header__burger">
+                <span></span>
+            </div>
+        </div>
+    </div>
+    </header>
+
+    <section class="model">
+
+        <div class="__container">
+            <div class="model-body">
+
+            <div class="sidebar">
+                <div class="path">
+                    <a href="{% url 'main' %}">Главная</a> /
+                    <a href="{% url 'brand' model.brand.id %}">{{ model.brand }}</a> /
+                    <a href="#">{{ model.name }}</a> /
+                </div>
+                    <ul id="accordion" class="accordion">
+
+                        {% for brand in brands %}
+                            {% if brand.models.count > 0 %}
+                        <li>
+                          <div class="link"><i class="fa fa-database"></i>{{ brand.name }}<i class="fa fa-chevron-down"></i></div>
+                          <ul class="submenu">
+                              {% for mod in  brand.models.all %}
+                                <li><a href="{% url  'model'  mod.id %}">{{ mod }}</a></li>
+                                {% endfor %}
+
+                          </ul>
+                        </li>
+                                {% endif %}
+                        {% endfor %}
+
+                      </ul>
+            </div>
+            <div class="model-item">
+                <div class="model-item__title title">
+                    Запчасти для {{ model.name }}
+
+                </div>
+
+                <div class="model-item__img">
+                    <img src="{{ model.featured_image.url }}" alt="">
+                </div>
+            <form action="" class="inModelSearch">
+
+                        <input class="model_search_text" type="text" name="search_query" >
+                        <button class="blue_btn" type="submit" value="Search">Поиск по {{ model.name }}</button>
+                    </form>
+                    <ul>
+                    <li>
+                        <form action="">
+                        <a href="{% url 'model' model.id  %}" style="color: #2573d9;"><b>Все |</b></a>
+                        {% for category in  categoryes %}
+
+                            <input type="radio" name="search_query" value="{{ category }}"   > <b>{{ category }} |</b>
+{#                            <input type="checkbox" name="{{ category }} "> {{ cat.category }}#}
+                        {% endfor %}
+                        <input class="blue_btn" type="submit" value="Фильтр" >
+
+                        </form>
+                    </li>
+                    </ul>
+
+                    <div class="pagination">
+                       <ul class="container paginator_box"  >
+
+
+                            {% if apps.has_previous %}
+                            <li><button class="paginator_btn" ><a href="?page={{ apps.previous_page_number  }}" style="color:#1e69f9;">&#10094; Пред. </a></button></li>
+                            {% endif %}
+
+
+                           {% for  page in paginator.page_range %}
+
+                           {% if paginator.count > results  %}
+
+                               {% if page == apps.number %}
+                               <li><button class="paginator_active"><a href="?page={{ page }}"  class="paginator_active_link" > {{ page }}</a></button></li>
+                               {% else %}
+                               <li><button class="paginator_btn"><a href="?page={{ page }}" style="color:#1e69f9"> {{ page }} </a></button></li>
+                               {% endif %}
+
+                           {% endif %}
+
+
+                           {% endfor %}
+
+
+                           {% if apps.has_next %}
+                            <li><button class="paginator_btn"><a href="?page={{ apps.next_page_number  }}" style="color:#1e69f9;">След. &#10095;</a></button></li>
+                           {% endif %}
+
+{#                           <li><a href="">След &#10095;</a>    </li>#}
+                       </ul>
+                   </div>
+                <div class="products">
+
+
+                    {% for app in apps %}
+
+                    <div class="product">
+                        <div class="product-img">
+                            <img src="{{ app.featured_image.url }}" alt="" width="150">
+                        </div>
+
+                            <div class="product-body">
+                                <div class="product-header">
+                                    <div class="product-title">
+
+                                    <a href="{% url 'oem' app.id  %}" target="_blank" style="color: #2573d9;"><b>{{ app.name }} для {{ model.name }}</b> </a>
+                                    </div>
+
+                                    <span class="status new">
+                                        {{ app.cond.name}}
+                                    </span>
+                                </div>
+                                <div class="product-info">
+                                    <div class="product-info__right">
+                                        <div class="product-info__number">
+                                            <p>Номер:</p> <p> <b>{{ app.brand.name }}</b>  {{ app.oem }} </p>
+                                        </div>
+                                        <div class="product-info__country">
+                                            <p>Страна производителя:</p> <p>{{ app.brand.country.name }}</p>
+                                        </div>
+                                        <button class="blue_btn">Подробнее</button>
+                                    </div>
+                                    <div class="product-info__left">
+                                        <div class="product-price">
+                                            {{ app.price }} p
+                                            <p>В наличии {{ app.quantaty }} шт.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+
+                    {% endfor %}
+
+
+
+                </div>
+
+                <div class="model-item__info">
+                    <div class="model-item__info-title">
+                        Заголовок
+                    </div>
+
+
+
+                    <p>
+
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Nam quis mi eu tortor elementum ullamcorper non ac nulla. In eget vehicula erat.
+                        Etiam nulla mi, vulputate euismod venenatis at, porta imperdiet purus. Etiam nulla magna,
+                        maximus at feugiat sit amet, sodales in magna. Duis nec hendrerit justo. Fusce at suscipit nisi,
+                        vel aliquet libero. Vestibulum tincidunt mi quis tincidunt </p>
+                    <p>aliquam. Morbi mollis mauris eget mauris fermentum, id hendrerit augue
+                        pulvinar. Duis a turpis placerat, porta mi vel, pulvinar metus. Duis sollicitudin,
+                        ligula non luctus laoreet, purus mi cursus mi, nec vulputate turpis odio quis mi. Sed pellentesque
+                        dolor justo, a mattis nisl bibendum id. Suspendisse potenti. Duis et velit faucibus ligula ultrices
+                        scelerisque. Duis hendrerit odio libero, et rutrum quam pretium nec. Aliquam maximus at nisl et bibendum.</p>
+                </div>
+
+
+                </div>
+      </div>
+</div>
+
+
+
+
+    </section>
+
+
+    <footer class="footer">
+        <div class="content">
+            <div class="footer-body">
+    <div class="footer-logo logo">
+                <span>MDM</span>-MOTORS
+            </div>
+            <div class="footer-menu">
+                <ul >
+                    <li>О компании</li>
+                    <li>Как купить</li>
+                    <li>Скачать прайс</li>
+                </ul>
+            </div>
+            </div>
+
+        </div>
+
+    </footer>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script src="{% static 'js/slick.min.js' %}"></script>
+	<script src="{% static 'js/script.js' %}" ></script>
+</body>
+</html>

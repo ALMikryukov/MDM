@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'styles/style.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+</head>
+<body>
+    <div class="wrapper">
+    <header class="header">
+        <div class="content">
+            <div class="header_container">
+
+            <div class="header-body__burger logo">
+                <span>MDM</span>-MOTORS
+            </div>
+            <div class="header-body">
+            <div class="header__menu">
+                <ul class="header__menu-list">
+                    <li>О компании</li>
+                    <li>Как купить</li>
+                    <li>Скачать прайс</li>
+                </ul>
+            </div> 
+            
+            <div class="header-body__main">
+            <div class="header-body__logo logo">
+                <span>MDM</span>-MOTORS
+            </div>
+            <div class="header-body__basket">
+                <img src="src/img/header/basket.svg" alt="">
+                <p>Корзина</p>
+            </div>
+            </div>    
+            <div class="header-body__search">
+                <input type="search" placeholder="Поиск">
+                <button>
+                    <img src="src/img/header/search.svg" alt="">
+                </button>
+            </div>
+        </div>
+            <div class="header__burger">
+                <span></span>
+            </div>
+        </div>
+    </div>
+    </header>
+   
+    <section class="model section">    
+        <div class="__container">
+            <div class="model-body">
+                
+            <div class="sidebar">
+                <div class="path">
+                    <a href="#">Главная</a> /
+                    <a href="#">Модели</a> /
+                    <a href="#">Модель</a> /
+                    <a href="#">Категория</a> /
+                    
+                </div>
+                    <ul id="accordion" class="accordion">
+
+                        
+                      <li>
+                          <div class="link"><i class="fa fa-database"></i>Двигатель<i class="fa fa-chevron-down"></i></div>
+                          <ul class="submenu">
+                            <li><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                          </ul>
+                        </li>
+                                                
+                 
+                         
+                      </ul>
+            </div>
+            <div class="model-item">
+                <div class="model-item__title title">
+                    Запчасти для Audi 100 [C4] 1991-1994
+                   
+                </div>
+                
+                <div class="model-item__img">
+                    <img src="/src/img/12.png" alt="">
+                </div>
+                <div class="products__title title">
+                    Амортизатор капота для Audi 100 [C4] 1991-1994
+                   
+                </div>
+                <div class="products">
+                    <div class="product">
+                        <div class="product-img">
+                            <img src="src/img/product.jpg" alt="">
+                        </div>
+                            <div class="product-body">
+                                <div class="product-header">
+                                    <div class="product-title">
+                                        Амортизатор капота для Audi 100 [C4] 1991-1994
+                                      
+                                    </div>
+                                    <span class="status new">
+                                        Новое
+                                    </span>
+                                </div>
+                                <div class="product-info">
+                                    <div class="product-info__right">
+                                        <div class="product-info__number">
+                                            <p>Номер:</p> <p>ZEKKERT GF1122 </p>
+                                        </div>
+                                        <div class="product-info__country">
+                                            <p>Страна производителя:</p> <p>Китай</p>
+                                        </div>
+                                    </div>
+                                    <div class="product-info__left">
+                                        <div class="product-price">
+                                            535 p
+                                            <p>В наличии</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="productMain-info__button product-more">
+                                    <button>Подробнее</button>
+                                </div>
+                                
+                            </div>
+                     
+                    </div>
+                   
+                </div>
+                <div class="products">
+                  <div class="product">
+                      <div class="product-img">
+                          <img src="src/img/product.jpg" alt="">
+                      </div>
+                          <div class="product-body">
+                              <div class="product-header">
+                                  <div class="product-title">
+                                      Амортизатор капота для Audi 100 [C4] 1991-1994
+                                    
+                                  </div>
+                                  <span class="status new">
+                                      Новое
+                                  </span>
+                              </div>
+                              <div class="product-info">
+                                  <div class="product-info__right">
+                                      <div class="product-info__number">
+                                          <p>Номер:</p> <p>ZEKKERT GF1122 </p>
+                                      </div>
+                                      <div class="product-info__country">
+                                          <p>Страна производителя:</p> <p>Китай</p>
+                                      </div>
+                                  </div>
+                                  <div class="product-info__left">
+                                      <div class="product-price">
+                                          535 p
+                                          <p>В наличии</p>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="productMain-info__button product-more">
+                                  <button>Подробнее</button>
+                              </div>
+                              
+                          </div>
+                   
+                  </div>
+                 
+              </div>
+            </div>
+            <div class="overlay">
+              <div class="slider-product">
+                <div
+                style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff"
+                class="swiper mySwiper2">
+                <div class="button-close">
+                  <img src="src/img/CloseSlider.svg" alt="">
+                </div>
+                <div class="slider-product-info">
+                  <div class="slider-product-info__about">
+                    <div class="slider-product__title">
+                      Описание товара:
+                    </div>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam molestias ad sit adipisci architecto asperiores unde voluptatum quisquam exercitationem veritatis, placeat, delectus repellat aliquid ullam quas omnis quasi illo vitae.
+                    Voluptatibus odio enim inventore natus sunt, sint neque omnis asperiores ratione iusto! Itaque unde quasi maiores eveniet ad quas, minima laudantium. Beatae tenetur ducimus magni nemo unde minus inventore culpa.
+                    ullam a laboriosam. Ad, totam numquam!</p>
+                    <div class="slider-product__title">
+                      Гарантия: <p>60 дней</p> 
+                    </div>
+                    <div class="slider-product__title">
+                      Вес: <p>0.7 кг</p>
+                    </div>
+                  </div>
+                  <div class="slider-product-info__price">
+                    <div class="slider-product__title">
+                      Цена: <p>500 р</p>
+                    </div>
+                    
+                  </div>
+                </div>
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <img src="src/img/2.PNG" />
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="src/img/2.png" />
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="src/img/3.png" />
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="src/img/4.png" />
+                  </div> 
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+              </div>
+              <div thumbsSlider="" class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <img src="src/img/1.PNG" />
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="src/img/2.PNG" />
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="src/img/3.png" />
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="src/img/4.png" />
+                  </div> 
+                </div>
+              </div>
+              </div>
+            </div>
+            </div>
+        </div>
+        
+    </section>
+</div>
+    <footer class="footer">
+        <div class="content">
+            <div class="footer-body">
+    <div class="footer-logo logo">
+                <span>MDM</span>-MOTORS
+            </div>
+            <div class="footer-menu">
+                <ul >
+                    <li>О компании</li>
+                    <li>Как купить</li>
+                    <li>Скачать прайс</li>
+                </ul>
+            </div>
+            </div>
+            
+        </div>
+        
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script src="{% static 'js/productSlider.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	  <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
