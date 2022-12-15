@@ -6,7 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    
     <link rel="stylesheet" href="{% static 'styles/style.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+    
 </head>
 <body>
 
@@ -71,27 +74,21 @@
             </div>
         </div>
         </header>
- <section class="sliderContainer">
+
+        <section class="sliderContainer section">
             <div class="__container">
-               <div class="mainSlider">
-                   <div class="slider-item">
-                       <div class="mainSlider-item">
-                            <img src="{% static 'img/mainPage/sliderImg.jpg' %}" alt="">
-                       </div>
-                   </div>
-                   <div class="slider-item">
-                       <div class="mainSlider-item">
-                            <img src="{% static 'img/mainPage/sliderImg.jpg' %}" alt="">
-                       </div>
-                   </div>
-                   <div class="slider-item">
-                       <div class="mainSlider-item">
-                            <img src="{% static 'img/mainPage/sliderImg.jpg' %}" alt="">
-                       </div>
-                   </div>
-               </div>
+                <div class="main-slider swiper-container">
+                    <div class=" swiper-wrapper">
+                        <div class="swiper-slide"><img src="{% static 'img/mainPage/sliderImg.jpg' %}" alt=""> </div>
+                        <div class="swiper-slide"><img src="{% static 'img/mainPage/sliderImg.jpg' %}" alt=""> </div>
+                        <div class="swiper-slide"><img src="{% static 'img/mainPage/sliderImg.jpg' %}" alt=""> </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
             </div>
-           </section>
+        </section>
 
            <section class="categories">
             <div class="__container">
@@ -117,6 +114,7 @@
            <footer class="footer">
             <div class="content">
                 <div class="footer-body">
+
         <div class="footer-logo logo">
                     <span>MDM</span>-MOTORS
                 </div>
@@ -126,7 +124,6 @@
                         <li>Как купить</li>
                         <li>Скачать прайс</li>
                         <li>Контакты</li>
-
                     </ul>
                 </div>
                 </div>
@@ -145,7 +142,8 @@
   crossorigin="anonymous"></script>
     {% endblock extrahead %}
 {
-	<script src="{% static 'js/slick.min.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script src="{% static 'js/mainSlider.js' %}" ></script>
 	<script src="{% static 'js/script.js' %}" ></script>
 </body>
 </html>

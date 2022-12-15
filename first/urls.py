@@ -10,7 +10,7 @@ path('', mainPage, name='main'),
 path('brand/<str:id>/', brand, name='brand' ),
 path('model/<str:id>/', model, name='model'),
 path('oem/<str:id>/', oem, name='oem'),
-path('test', test_func , name='test'),
+path('test_', test_func , name='test'),
 # path('delete/<int:id>/',delete  ),
 # path('model/', model, name='model' )
 # path( 'search_oem/', search_oem , name='search_oem'),

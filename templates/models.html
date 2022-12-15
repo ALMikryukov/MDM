@@ -55,25 +55,27 @@
     </div>
     </header>
 
-    <section class="Models">
+    <section class="Models section">
+        <div class="Models-body"> 
+            <div class="content">
+                <div class="Models-title title">
+                    Запчасти для {{ brand.name }}
+                </div>
+    
+    
+                <div class="path">
+                    <a href="{% url 'main' %}" >Главная</a> /
+                    <a href="#">{{ brand.name }}</a>
+    
+                </div>
+            </div>
         <div class="__container">
-            <div class="Models-title title">
-                Запчасти для {{ brand.name }}
-            </div>
-
-
-            <div class="path">
-                <a href="{% url 'main' %}" >Главная</a> /
-                <a href="#">{{ brand.name }}</a>
-
-            </div>
-
-            <div class="Models-body">
             
+            <div class="Models-items">
 
-                <p>  {{ model.name }}
+          
+
                     {% for item in models %}
-
 
                         <a href="{% url 'model'  item.id %} ">
 
@@ -102,11 +104,11 @@
                         </a>
 
                     {% endfor %}
-
-                </div>
-
             </div>
+        </div>
 
+        </div>
+    </div>
     </section>
 
     <footer class="footer">
@@ -127,7 +129,7 @@
         </div>
 
     </footer>
-    </div>
+   
 
 </body>
 </html>
