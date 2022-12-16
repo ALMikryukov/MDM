@@ -39,7 +39,7 @@
             <div class="header-body__search">
                 <input type="search" placeholder="Поиск">
                 <button>
-                    <img src="src/img/header/search.svg" alt="">
+                    <img src="{% static 'img/header/basket.svg' %}" alt="">
                 </button>
             </div>
         </div>
@@ -92,9 +92,10 @@
                    
                 </div>
                 <div class="products">
+
                   <div class="product">
                       <div class="product-img">
-                          <img src="src/img/product.jpg" alt="" width="150" >
+                          <img src="{% static 'images/Parts/ACMDX01-000-L.jpg' %}" alt="" width="150" >
                       </div>
                           <div class="product-body">
                               <div class="product-header">
@@ -129,6 +130,12 @@
                           </div>
                    
                   </div>
+
+
+
+
+
+
                  
               </div>
             </div>
@@ -137,13 +144,16 @@
                   <div
                   style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff"
                   class="swiper mySwiper2">
+
                   <div class="button-close">
                     <img src="src/img/CloseSlider.svg" alt="">
                   </div>
+
                   <div class="slider-product-info">
                     <div class="slider-product-info__close active ">
           
                     </div>
+
                     <div class="slider-product-info__body">
                       <div class="slider-product-info__about">
                         <div class="slider-product__title">
@@ -172,10 +182,10 @@
                   </div>
                   <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                      <img src="src/img/1.png" />
+                      <img src="{% static 'images/Parts/ACMDX01-000-L.jpg' %}" />
                     </div>
                     <div class="swiper-slide">
-                      <img src="src/img/2.png" />
+                      <img src="{% static 'images/F026407080.jpg'%}" />
                     </div>
                     <div class="swiper-slide">
                       <img src="src/img/3.png" />
@@ -190,10 +200,10 @@
                 <div thumbsSlider="" class="swiper mySwiper">
                   <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                      <img src="src/img/1.png" />
+                      <img src="{% static 'images/Parts/ACMDX01-000-L.jpg' %}" />
                     </div>
                     <div class="swiper-slide">
-                      <img src="src/img/2.png" />
+                      <img src="{% static 'images/F026407080.jpg'%}" />
                     </div>
                     <div class="swiper-slide">
                       <img src="src/img/3.png" />
