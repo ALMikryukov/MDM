@@ -84,3 +84,12 @@ def test_func(request):
     oem  = PartItem.objects.all()
     context = {'oem':oem,} 
     return render(request ,  'test_.html', context)
+
+def basket(request):
+    return render(request ,  'basket.html')
+
+def about(request):
+    return render(request ,  'aboutTheCompany.html')
+
+def contacts(request):
+    return render(request ,  'contacts.html')
