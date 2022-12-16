@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'styles/style.css' %}">
+</head>
+<body>
+
+    <div class="wrapper">
+        <header class="header">
+            <div class="content">
+                <div class="header_container">
+                    <div class="header-body__burger logo">
+                        <a href="#">
+                            <span>MDM</span>-MOTORS
+                        </a>
+                    </div>
+                <div class="header-body">
+                <div class="header__menu">
+                    <ul class="header__menu-list">
+                        <li>О компании</li>
+                        <li>Как купить</li>
+                        <li>Скачать прайс</li>
+                        <li>Контакты</li>
+
+                    </ul>
+                </div>
+
+                <div class="header-body__main">
+                <div class="header-body__logo logo">
+                    <span>MDM</span>-MOTORS
+                </div>
+                <div class="header-body__basket">
+                    <img src="{% static 'img/header/basket.svg' %}" alt="">
+                    <p>Корзина</p>
+                </div>
+                </div>
+
+{#                <div class="header-body__search">#}
+{#                    <form action="">#}
+{##}
+{#                    <input type="search" placeholder="Поиск" >#}
+{#                    <button type="submit"  value="Search" >#}
+{#                        <img src="{% static 'img/header/search.svg' %}" alt="">#}
+{#                    </button>#}
+{#                    </form>#}
+{##}
+{#                </div>#}
+
+
+
+
+                <div class="header-body__search">
+
+                    <input type="search" placeholder="Поиск" >
+                    <button type="submit"  value="Search" data-method="get">
+                        <img src="{% static 'img/header/search.svg' %}" alt="">
+                    </button>
+
+                </div>
+
+
+            </div>
+                <div class="header__burger">
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        </header>
+    
+        <section class="contacts section">
+            <div class="__container">
+                <div class="contacts-body">
+                    <div class="contacts-body__number contact">
+                        <img src="{% static 'img/contacts/Map.svg' %}" alt="">
+                        <div class="">
+                            <span> Наш адресс:</span>
+                            <p>
+                                Челябинская область, Челябинск, ул. Профессора Благих, 7
+                            </p>
+                        </div>
+                            
+                    </div>
+                    <div class="contacts-body__time contact">
+                        <img src="{% static 'img/contacts/Clock.svg' %}" alt="">
+                        <div class="">
+                            <span>Режим работы:</span>
+                            <p>
+                                пн-пт: с 09.30 - 18.00 <br>
+                                суббота: с 09.30 - 14.00<br>
+                                воскресенье: выходной
+                            </p>
+                        </div>
+                            
+                    </div>
+                    <div class="contacts-body__phone contact">
+                        <img src="{% static 'img/contacts/Telephone.svg' %}" alt="">
+                        <div class="">
+                            <span>Телефон</span>
+                            <p>
+                                8 951 112-12-57
+                            </p>
+                        </div>
+                            
+                    </div>
+                    <div class="contacts-body__email contact">
+                        <img src="{% static 'img/contacts/Email.svg' %}" alt="">
+                        <div class="">
+                            <span>E-mail:</span>
+                            <p>
+                                @gmail.com
+                            </p>
+                        </div>
+                            
+                    </div>
+                </div>
+                <div class="geolocation">
+                    <div class="geolocation-title">
+                        Пункт выдачи:
+                    </div>
+                    
+                    <div class="geolocation-map" style="border-radius:15px;position:relative;overflow:hidden;">
+                        <div class="geolocation-info">
+                            <div class="geolocation-info-body">
+                                <div class="geolocation-info-address">
+                                    Челябинская область, Челябинск, ул. Профессора Благих, 7
+                                </div>
+                                <p>р-н Курчатовский</p>
+                                <p> 8 951 112-12-57</p>
+                            
+                            </div>  
+                        </div>
+                        <a href="https://yandex.ru/maps/56/chelyabinsk/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Челябинск</a><a href="https://yandex.ru/maps/56/chelyabinsk/house/ulitsa_professora_blagikh_7/YkgYdQdoQEEOQFtvfX5wcHxhbQ==/?ll=61.309070%2C55.211034&utm_medium=mapframe&utm_source=maps&z=21" style="color:#eee;font-size:12px;position:absolute;top:14px;">Улица Профессора Благих, 7 — Яндекс Карты</a><iframe src=" https://yandex.ru/map-widget/v1/-/CCUfeYA-tB" width="100%" height="500" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe></div>
+                </div>
+            </div>
+            
+        </section>
+        
+    
+
+</div>
+
+    <footer class="footer">
+        <div class="content">
+            <div class="footer-body">
+    <div class="footer-logo logo">
+                <span>MDM</span>-MOTORS
+            </div>
+            <div class="footer-menu">
+                <ul >
+                    <li>О компании</li>
+                    <li>Как купить</li>
+                    <li>Скачать прайс</li>
+                </ul>
+            </div>
+            </div>
+            
+        </div>
+        
+    </footer>
+
+	
+</body>
+</html>

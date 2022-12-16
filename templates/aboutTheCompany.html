@@ -6,10 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    
     <link rel="stylesheet" href="{% static 'styles/style.css' %}">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
-    
 </head>
 <body>
 
@@ -74,50 +71,33 @@
             </div>
         </div>
         </header>
-
-        <section class="sliderContainer section">
+    
+        <section class="about-company compan section">
             <div class="__container">
-                <div class="main-slider swiper-container">
-                    <div class=" swiper-wrapper">
-                        <div class="swiper-slide"><img src="{% static 'img/mainPage/sliderImg.jpg' %}" alt=""> </div>
-                        <div class="swiper-slide"><img src="{% static 'img/mainPage/sliderImg.jpg' %}" alt=""> </div>
-                        <div class="swiper-slide"><img src="{% static 'img/mainPage/sliderImg.jpg' %}" alt=""> </div>
-                    </div>
-                    <div class="swiper-pagination"></div>
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
-                </div>
+            <div class="about-company__title title">
+                О компании
             </div>
-        </section>
+            <div class="about-company__content ">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi voluptatem obcaecati dolore consequatur nesciunt quaerat accusantium labore deserunt. Dolor veritatis sunt blanditiis laudantium dolores optio deserunt id aliquam nesciunt minima?
+                Dolores obcaecati cumque mollitia incidunt consectetur quae rem doloribus quis eaque tempora molestiae, veniam officia ipsa? Facilis enim ad ducimus perspiciatis consequuntur similique odio. Debitis veritatis laboriosam repellendus ut odit.
+                Consequatur architecto reiciendis optio harum distinctio praesentium unde voluptas? Quam fuga necessitatibus, voluptatem mollitia dolores, doloribus consequuntur qui perspiciatis, dolore possimus voluptates aperiam maxime quidem consectetur aspernatur impedit inventore quibusdam?
+                Quasi iusto at placeat accusamus laudantium qui quos fugit dolores assumenda! Voluptas illum ad, animi praesentium vitae natus corporis aperiam quas, beatae molestiae quia place</p>
 
-           <section class="categories">
-            <div class="__container">
-                <div class="categories-choice">
-                    <div class="categories-choice__one choice">
-                        Легковые
-                    </div>
-                    <div class="categories-choice__two choice">
-                       Грузовые
-                   </div>
-                </div>
-                <div class="categories-body">
-
-               <ul>
-                   {% for brand in brands %}
-                       <li><a href="{% url 'brand' brand.pk  %} ">{{ brand }}</a></li>
-                   {% endfor %}
-               </ul>
-
-                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi voluptatem obcaecati dolore consequatur nesciunt quaerat accusantium labore deserunt. Dolor veritatis sunt blanditiis laudantium dolores optio deserunt id aliquam nesciunt minima?
+                    Dolores obcaecati cumque mollitia incidunt consectetur quae rem doloribus quis eaque tempora molestiae, veniam officia ipsa? Facilis enim ad ducimus perspiciatis consequuntur similique odio. Debitis veritatis laboriosam repellendus ut odit.
+                    Consequatur architecto reiciendis optio harum distinctio praesentium unde voluptas? Quam fuga necessitatibus, voluptatem mollitia dolores, doloribus consequuntur qui perspiciatis, dolore possimus voluptates aperiam maxime quidem consectetur aspernatur impedit inventore quibusdam?
+                    Quasi iusto at placeat accusamus laudantium qui quos fugit dolores assumenda! Voluptas illum ad, animi praesentium vitae natus corporis aperiam quas, beatae molestiae quia place</p>
             </div>
-        </section>
+        </div>
+            </section>
+        
+    
 
+</div>
 
-    </div>
     <footer class="footer">
         <div class="content">
             <div class="footer-body">
-
     <div class="footer-logo logo">
                 <span>MDM</span>-MOTORS
             </div>
@@ -126,25 +106,14 @@
                     <li>О компании</li>
                     <li>Как купить</li>
                     <li>Скачать прайс</li>
-                    <li>Контакты</li>
                 </ul>
             </div>
             </div>
-
+            
         </div>
-
+        
     </footer>
 
-
-    {% block extrahead %}
-    <script
-  src="https://code.jquery.com/jquery-3.6.1.slim.min.js"
-  integrity="sha256-w8CvhFs7iHNVUtnSP0YKEg00p9Ih13rlL9zGqvLdePA="
-  crossorigin="anonymous"></script>
-    {% endblock extrahead %}
-{
-    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-    <script src="{% static 'js/mainSlider.js' %}" ></script>
-	<script src="{% static 'js/script.js' %}" ></script>
+	
 </body>
 </html>
