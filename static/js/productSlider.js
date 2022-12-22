@@ -17,6 +17,7 @@ var swiper = new Swiper(".mySwiper", {
 	  swiper: swiper,
 	},
   });
+
 /*Slider-product*/
 const openBtn = document.querySelectorAll('.product-more button');
 const closeBtn = document.querySelector('.button-close');
