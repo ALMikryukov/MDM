@@ -1,6 +1,41 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,800;1,500&display=swap");
 
+/*Шрифты*/
+@font-face{
+
+  font-family: 'Montserrat';
+  src: url('../font/Montserrat-Regular.ttf');
+  src: url('../font/Montserrat-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  }
+  @font-face {
+    font-family: 'Montserrat';
+    src: url('../font/Montserrat-Medium.ttf');
+    src: url('../font/Montserrat-Medium.ttf') format('truetype');
+    font-weight: 500;
+  
+    }
+  @font-face {
+    font-family: 'Montserrat';
+    src: url('../font/Montserrat-ExtraBold.ttf');
+    src: url('../font/Montserrat-ExtraBold.ttf') format('truetype');
+    font-weight: 600;
+  }
+
+  @font-face {
+    font-family: 'Montserrat';
+    src: url('../font/Montserrat-SemiBold.ttf');
+    src: url('../font/Montserrat-SemiBold.ttf') format('truetype');
+    font-weight: 800;
+    }
+  @font-face {
+      font-family: 'Montserrat';
+      src: url('../font/Montserrat-Black.ttf');
+      src: url('../font/Montserrat-Black.ttf') format('truetype');
+      font-weight: 900;
+  }
 *,
 *::before,
 *::after {
@@ -43,6 +78,7 @@ dd {
 }
 
 body {
+  position: relative;
   height: 100%;
   font-family: "Montserrat", sans-serif;
   font-size: 14px;
@@ -797,7 +833,7 @@ select {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 20px;
-  margin: 20px 0 0 0;
+  margin: 20px 0;
 }
 .products__title {
   margin: 30px 0 0 0;
@@ -954,6 +990,7 @@ select {
 }
 
 .slider-product {
+  width: 100%;
   max-width: 1100px;
 }
 
@@ -1012,7 +1049,7 @@ select {
 }
 
 .mySwiper {
-  width: 600px;
+  max-width: 600px;
   height: 150px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -1695,7 +1732,7 @@ select {
   }
 }
 .footer {
-  position: absolute;
+  /* position: absolute; */
   width: 100%;
   padding: 21px 30px;
   background: url("../img/header/bcg.jpg") no-repeat;
