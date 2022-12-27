@@ -120,7 +120,7 @@ def test_func(request, id):
     print(search_query)
 
 
-    return render(request,  'test__.html', context )
+    return render(request,  'test_.html', context )
 
 
 

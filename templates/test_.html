@@ -16,8 +16,11 @@
     <div class="wrapper">
       <header class="header">
         <div class="content">
-          <div class="header_container">
-            <div class="header-body__burger logo"><span>MDM</span>-MOTORS</div>
+            <div class="header_container">
+
+            <div class="header-body__burger logo">
+                <span>MDM</span>-MOTORS
+            </div>
             <div class="header-body">
               <div class="header__menu">
                 <ul class="header__menu-list">
@@ -81,256 +84,141 @@
 
             
             <div class="model-item">
-              <div class="model-item__title title">
-                Запчасти для {{brand.name}}  {{ model.name }}
-              </div>
+                <div class="model-item__title title">
+                    Запчасти для Audi 100 [C4] 1991-1994
+                   
+                </div>
+                
+                <div class="model-item__img">
+                    <img src="/src/img/12.png" alt="">
+                </div>
+                <div class="products__title title">
+                    Амортизатор капота для Audi 100 [C4] 1991-1994
+                   
+                </div>
+                <div class="products">
 
-              <div class="model-item__img">
-                <img src="{{ model.featured_image.url }}" alt="" />
-              </div>
-              <!-- <div class="products__title title">
-            
-              </div> -->
+                    {% for app in apps %}
 
-              <form action="" class="inModelSearch">
-
-                <input class="model_search_text" type="text" name="search_query" >
-                <button class="blue_btn" type="submit" value="Search">Поиск по {{ model.name }}</button>
-            </form>
-            <ul>
-            <li>
-                <form action="">
-                <a href="{% url 'model' model.id  %}" style="color: #2573d9;"><b>Все |</b></a>
-                {% for category in  categoryes %}
-
-                    <input type="radio" name="search_query" value="{{ category }}"   > <b>{{ category }} |</b>
-{#                            <input type="checkbox" name="{{ category }} "> {{ cat.category }}#}
-                {% endfor %}
-                <input class="blue_btn" type="submit" value="Фильтр" >
-
-                </form>
-            </li>
-            </ul>
-            <div class="pagination">
-              <ul class="container paginator_box"  >
-
-
-                   {% if apps.has_previous %}
-                   <li><button class="paginator_btn" ><a href="?page={{ apps.previous_page_number  }}" style="color:#1e69f9;">&#10094; Пред. </a></button></li>
-                   {% endif %}
-
-
-                  {% for  page in paginator.page_range %}
-
-                  {% if paginator.count > results  %}
-
-                      {% if page == apps.number %}
-                      <li><button class="paginator_active"><a href="?page={{ page }}"  class="paginator_active_link" > {{ page }}</a></button></li>
-                      {% else %}
-                      <li><button class="paginator_btn"><a href="?page={{ page }}" style="color:#1e69f9"> {{ page }} </a></button></li>
-                      {% endif %}
-
-                  {% endif %}
-
-
+                  <div class="product">
+                      <div class="product-img">
+                          <img src="{{ app.featured_image.url }}" alt="" width="150" >
+                      </div>
+                          <div class="product-body">
+                              <div class="product-header">
+                                  <div class="product-title">
+                                      {{app.name}} для {{model.brand}} {{model.name}}
+                                    
+                                  </div>
+                                  <span class="status new">
+                                      Новое
+                                  </span>
+                              </div>
+                              <div class="product-info">
+                                  <div class="product-info__right">
+                                      <div class="product-info__number">
+                                          <p>Номер:</p> <p>{{app.brand}} {{app.oem}} </p>
+                                      </div>
+                                      <div class="product-info__country">
+                                          <p>Страна производителя:</p> <p>Китай</p>
+                                      </div>
+                                  </div>
+                                  <div class="product-info__left">
+                                      <div class="product-price">
+                                          535 p
+                                          <p>В наличии</p>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="productMain-info__button product-more">
+                                  <button>Подробнее</button>
+                              </div>
+                          </div>
+                          <div class="overlay">
+                            <div class="slider-product">
+                              <div
+                              style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff"
+                              class="swiper mySwiper2">
+                              <div class="button-close">
+                                <img src="src/img/CloseSlider.svg" alt="">
+                              </div>
+                              <div class="slider-product-info">
+                                <div class="slider-product-info__close active ">
+                      
+                                </div>
+                                <div class="slider-product-info__body">
+                                  <div class="slider-product-info__about">
+                                    <div class="slider-product__title">
+                                      Описание товара:
+                                    </div>
+                                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam molestias ad sit adipisci architecto asperiores unde voluptatum quisquam exercitationem veritatis, placeat, delectus repellat aliquid ullam quas omnis quasi illo vitae.
+                                    Voluptatibus odio enim inventore natus sunt, sint neque omnis asperiores ratione iusto! Itaque unde quasi maiores eveniet ad quas, minima laudantium. Beatae tenetur ducimus magni nemo unde minus inventore culpa.
+                                    ullam a laboriosam. Ad, totam numquam!</p>
+                                  </div>
+                                  <div class="slider-product-info__price">
+                                    <div class="slider-product__title">
+                                      Гарантия: <p>60 дней</p> 
+                                    </div>
+                                    <div class="slider-product__title">
+                                      Вес: <p>0.7 кг</p>
+                                    </div>
+                                    <div class="slider-product__title">
+                                      Цена: <p>500 р</p>
+                                    </div>
+                                    <div class="product-info__button">
+                                      <button>Добавить в корзину</button>
+                                  </div>
+                                  </div>
+                                </div>
+                              
+                              </div>
+                              <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                  <img src="{{ app.featured_image.url }}" />
+                                </div>
+                                <div class="swiper-slide">
+                                  <img src="{{ app.featured_image.url }}" />
+                                </div>
+                                <div class="swiper-slide">
+                                  <img src="{{ app.featured_image.url }}" />
+                                </div>
+                                <div class="swiper-slide">
+                                  <img src="{{ app.featured_image.url }}" />
+                                </div> 
+                              </div>
+                              <div class="swiper-buttons">
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-button-prev"></div>
+                              </div>
+                              
+                            </div>
+                            <div thumbsSlider="" class="swiper mySwiper">
+                              <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                  <img src="{{ app.featured_image.url }}" />
+                                </div>
+                                <div class="swiper-slide">
+                                  <img src="{{ app.featured_image.url }}" />
+                                </div>
+                                <div class="swiper-slide">
+                                  <img src="{{ app.featured_image.url }}" />
+                                </div>
+                                <div class="swiper-slide">
+                                  <img src="{{ app.featured_image.url }}" />
+                                </div> 
+                              </div>
+                            </div>
+                            </div>
+                          </div>
+                  </div>
                   {% endfor %}
-
-
-                  {% if apps.has_next %}
-                   <li><button class="paginator_btn"><a href="?page={{ apps.next_page_number  }}" style="color:#1e69f9;">След. &#10095;</a></button></li>
-                  {% endif %}
-
-{#                           <li><a href="">След &#10095;</a>    </li>#}
-              </ul>
-          </div>
-
-
-
-
-
-              <div class="products">
-
-                {% for app in apps %}
-
-                <div class="product">
-                  <div class="product-img">
-                    <img src="{{ app.featured_image.url }}" alt="" />
-                  </div>
-                  <div class="product-body">
-                    <div class="product-header">
-                      <div class="product-title">
-                        {{app.name}} для  {{model.name}}
-                      </div>
-                      <span class="status new"> Новое </span>
-                    </div>
-                    <div class="product-info">
-                      <div class="product-info__right">
-                        <div class="product-info__number">
-                          <p>Номер:</p>
-                          <p>ZEKKERT GF1122</p>
-                        </div>
-                        <div class="product-info__country">
-                          <p>Страна производителя:</p>
-                          <p>Китай</p>
-                        </div>
-                      </div>
-                      <div class="product-info__left">
-                        <div class="product-price">
-                          535 p
-                          <p>В наличии</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="productMain-info__button product-more">
-                      <button>Подробнее</button>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-
-
-              <!-- <div class="products">
-                <div class="product">
-                  <div class="product-img">
-                    <img src="src/img/product.jpg" alt="" />
-                  </div>
-                  <div class="product-body">
-                    <div class="product-header">
-                      <div class="product-title">
-                        Амортизатор капота для Audi 100 [C4] 1991-1994
-                      </div>
-                      <span class="status new"> Новое </span>
-                    </div>
-                    <div class="product-info">
-                      <div class="product-info__right">
-                        <div class="product-info__number">
-                          <p>Номер:</p>
-                          <p>ZEKKERT GF1122</p>
-                        </div>
-                        <div class="product-info__country">
-                          <p>Страна производителя:</p>
-                          <p>Китай</p>
-                        </div>
-                      </div>
-                      <div class="product-info__left">
-                        <div class="product-price">
-                          535 p
-                          <p>В наличии</p>
-                        </div>
-                      </div>
-                    </div> -->
-                    <div class="productMain-info__button product-more">
-                      <button>Подробнее</button>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
-
-
-            <div class="overlay">
-
-
-              <div class="slider-product">
-
-                <div
-                  style="
-                    --swiper-navigation-color: #fff;
-                    --swiper-pagination-color: #fff;
-                  "
-                  class="swiper mySwiper2"
-                >
-                  <div class="button-close">
-                    <img src="src/img/CloseSlider.svg" alt="" />
-                  </div>
-                  <div class="slider-product-info">
-                    <div class="slider-product-info__about">
-                      <div class="slider-product__title">Описание товара:</div>
-                      <p>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing
-                        elit. Laboriosam molestias ad sit adipisci architecto
-                        asperiores unde voluptatum quisquam exercitationem
-                        veritatis, placeat, delectus repellat aliquid ullam quas
-                        omnis quasi illo vitae. Voluptatibus odio enim inventore
-                        natus sunt, sint neque omnis asperiores ratione iusto!
-                        Itaque unde quasi maiores eveniet ad quas, minima
-                        laudantium. Beatae tenetur ducimus magni nemo unde minus
-                        inventore culpa. ullam a laboriosam. Ad, totam numquam!
-                      </p>
-                      <div class="slider-product__title">
-                        Гарантия:
-                        <p>60 дней</p>
-                      </div>
-                      <div class="slider-product__title">
-                        Вес:
-                        <p>0.7 кг</p>
-                      </div>
-                    </div>
-                    <div class="slider-product-info__price">
-                      <div class="slider-product__title">
-                        Цена:
-                        <p>500 р</p>
-                      </div>
-                    </div>
-                  </div>
-
-
-                  <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                      <img src="{{ app.featured_image.url }}" />
-                    </div>
-                    <div class="swiper-slide">
-                      <img src="{{ app.featured_image.url }}" />
-                    </div>
-                    <div class="swiper-slide">
-                      <img src="src/img/3.png" />
-                    </div>
-                    <div class="swiper-slide">
-                      <img src="src/img/4.png" />
-                    </div>
-                  </div>
-
-
-                  <div class="swiper-button-next"></div>
-                  <div class="swiper-button-prev"></div>
-                </div>
-
-
-
-                <div thumbsSlider="" class="swiper mySwiper">
-                  <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                      <img src="src/img/1.PNG" />
-                    </div>
-                    <div class="swiper-slide">
-                      <img src="src/img/2.PNG" />
-                    </div>
-                    <div class="swiper-slide">
-                      <img src="src/img/3.png" />
-                    </div>
-                    <div class="swiper-slide">
-                      <img src="src/img/4.png" />
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-
-
-
-
-
             </div>
-
-            {% endfor %}
-
-
-          </div>
         </div>
-
-      </section>
-    </div>
+        
+    </section>
+</div>
     <footer class="footer">
       <div class="content">
         <div class="footer-body">

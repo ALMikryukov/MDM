@@ -12,5 +12,3 @@ new Swiper('.main-slider', {
 	},
 });
 
-
-
