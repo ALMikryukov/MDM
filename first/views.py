@@ -31,6 +31,7 @@ def model(request, id) :
     apps =   parts.filter(app=model)
     cats = Catalog.objects.all()
     categoryes = set()
+
     for z  in model.partitem_set.all():
         categoryes.add(z.category)
 
@@ -80,10 +81,51 @@ def oem(request, id):
 
     return render(request, 'oem.html', context)
 
-def test_func(request):
-    oem  = PartItem.objects.all()
-    context = {'oem':oem,} 
-    return render(request ,  'test_.html', context)
+def test_func(request, id):
+    models = CarModels.objects.all()
+    brands = CarBrands.objects.all().order_by( 'name',)
+    model = CarModels.objects.get(id=id)
+    parts=  PartItem.objects.all()
+    apps =   parts.filter(app=model)
+    cats = Catalog.objects.all()
+    categoryes = set()
+
+    for z  in model.partitem_set.all():
+        categoryes.add(z.category)
+
+    search_query =''
+    if request.GET.get('search_query'):
+        search_query = request.GET.get('search_query')
+    apps = apps.filter(Q(name__icontains=search_query) | Q(oem__icontains=search_query)
+                       | Q(category__category__icontains=search_query))
+
+
+    page = request.GET.get('page')
+    results = 10
+    paginator = Paginator(apps, results)
+
+    try:
+        apps  = paginator.page(page)
+    except PageNotAnInteger:
+        page = 1
+        apps = paginator.page(page)
+    except EmptyPage:
+        page = paginator.num_pages
+        apps = paginator.page(page)
+
+
+
+    context = {'model': model, 'apps':apps, 'cats': cats ,
+               'models':models, 'brands': brands, 'categoryes':categoryes, 'paginator':paginator, 'results': results }
+    print(search_query)
+
+
+    return render(request,  'test_.html', context )
+
+
+
+
+
 
 def basket(request):
     return render(request ,  'basket.html')
@@ -93,3 +135,6 @@ def about(request):
 
 def contacts(request):
     return render(request ,  'contacts.html')
+
+def test(request):
+    return render(request ,  'test.html')
