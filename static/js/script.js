@@ -53,16 +53,16 @@ $(function() {
 	var accordion = new Accordion($('#accordion'), false);
 });
 
-const  productSlider = document.querySelectorAll('.slider-for__img');
-const  productSliderFull = document.querySelector('.overlay');
-const  closeSliderFull = document.querySelector('.slider-forFull__close');
+// const  productSlider = document.querySelectorAll('.slider-for__img');
+// const  productSliderFull = document.querySelector('.overlay');
+// const  closeSliderFull = document.querySelector('.slider-forFull__close');
 
 
-Array.from(productSlider).forEach(item => {
-   item.onclick = function () {
-	productSliderFull.classList.add('active');
-   }
-})
-closeSliderFull.onclick = function () {
-	productSliderFull.classList.remove('active');
-   }
+// Array.from(productSlider).forEach(item => {
+//    item.onclick = function () {
+// 	productSliderFull.classList.add('active');
+//    }
+// })
+// closeSliderFull.onclick = function () {
+// 	productSliderFull.classList.remove('active');
+//    }
