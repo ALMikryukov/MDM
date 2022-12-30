@@ -1,3 +1,4 @@
+import json
 from django.db import models
 
 # Create your models here.
@@ -44,7 +45,9 @@ class PartItem(models.Model):
     oemIn = models.CharField(max_length=25, blank=True)
     featured_image = models.ImageField(null=True, blank=True,default='default.jpg',upload_to='Parts')
 
-
+    def toJSON(self):
+        return json.dumps(self, default=vars,
+            sort_keys=True, indent=4)
 
     def __str__(self):
         return str(self.oem +   ' '  + self.name )

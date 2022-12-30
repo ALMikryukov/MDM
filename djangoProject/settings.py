@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'bootstrap4',
 ]
 
+APPEND_SLASH = False
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',

@@ -1,3 +1,4 @@
+import json
 from django.dispatch.dispatcher import receiver
 from django.shortcuts import render, redirect, HttpResponse
 from django.contrib.auth import login, authenticate, logout
@@ -8,6 +9,7 @@ from django.urls import conf
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.db.models import Q
 from .models import *
+from django.http import JsonResponse
 
 # from .forms import *
 # from .utils import *
@@ -80,6 +82,16 @@ def oem(request, id):
     context = {'oem_':oem_, }
 
     return render(request, 'oem.html', context)
+
+def test_get_func(request, id):
+    
+    # model = CarModels.objects.get(id=id)
+    parts =  PartItem.objects.get(id=id)
+    # apps =   parts.filter(app=model)
+
+    context = {'model': parts.toJSON()}
+
+    return JsonResponse(context)
 
 def test_func(request, id):
     models = CarModels.objects.all()
