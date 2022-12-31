@@ -44,6 +44,12 @@ class PartItem(models.Model):
     price  =  models.IntegerField(blank=True, null=True)
     oemIn = models.CharField(max_length=25, blank=True)
     featured_image = models.ImageField(null=True, blank=True,default='default.jpg',upload_to='Parts')
+    featured_image_2 = models.ImageField(null=True, blank=True,default='default.jpg',upload_to='Parts')
+    featured_image_3 = models.ImageField(null=True, blank=True,default='default.jpg',upload_to='Parts')
+    featured_image_4 = models.ImageField(null=True, blank=True,default='default.jpg',upload_to='Parts')
+
+
+
 
     def toJSON(self):
         return json.dumps(self, default=vars,

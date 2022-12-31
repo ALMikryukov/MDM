@@ -1,7 +1,7 @@
 from django.contrib import admin
 from .models import *
 
-admin.site.site_header ='адмика Чибиса'
+admin.site.site_header ='админка Чибиса'
 admin.site.index_title = 'mdmmotors.ru'
 admin.site.register(Conditions)
 admin.site.register(Catalog)
