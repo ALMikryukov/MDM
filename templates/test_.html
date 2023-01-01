@@ -230,8 +230,19 @@
                   console.log(jsonParse);
                   document.querySelector('.price').innerHTML = jsonParse['price'];
                   document.querySelector('.overlay').classList.add('active');
-                  document.querySelectorAll('.swiper-slide img').forEach(item => {
+                  document.querySelector('.slider-product').style.top = (window.scrollY + 80) + 'px';
+                  console.log(window.scrollY);
+                  document.querySelectorAll('.slider-image-one img').forEach(item => {
                     item.src = '/images/' + jsonParse['featured_image'];
+                  })
+                  document.querySelectorAll('.slider-image-two img').forEach(item => {
+                    item.src = '/images/' + jsonParse['featured_image_2'];
+                  })
+                  document.querySelectorAll('.slider-image-three img').forEach(item => {
+                    item.src = '/images/' + jsonParse['featured_image_3'];
+                  })
+                  document.querySelectorAll('.slider-image-four img').forEach(item => {
+                    item.src = '/images/' + jsonParse['featured_image_4'];
                   })
               }
           });
